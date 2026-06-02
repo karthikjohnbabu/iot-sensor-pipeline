@@ -1,4 +1,47 @@
+cat > .gitignore << 'EOF'
+# Virtual environment - never commit this
 venv/
+
+# Python cache files
+*.pyc
+*.pyo
+__pycache__/
+*.egg-info/
+dist/
+build/
+
+# Environment variables - NEVER commit
+.env
+.env.local
+.env.*.local
+
+# AWS credentials - NEVER commit
+.aws/
+credentials
+aws_credentials.csv
+
+# Office and generated files
 *.docx
 *.doc
 *.pdf
+*.xlsx
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Logs
+*.log
+logs/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Downloaded CSV keys - NEVER commit
+*_accessKeys.csv
+*credentials*.csv
+EOF
