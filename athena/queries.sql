@@ -82,3 +82,4 @@ FROM "iot_sensor_db"."processed"
 WHERE machine_id = 'Machine-01'
 ORDER BY timestamp DESC
 LIMIT 20;
+
