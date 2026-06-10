@@ -50,3 +50,24 @@ DEA-C01 skills covered:
 - Skill 1.2.5: Implement transformation services (Glue) - DONE
 - Skill 1.2.6: Transform between formats JSON to Parquet - DONE
 - Skill 1.2.4: Cost optimisation through Parquet and partitioning - DONE
+
+## CloudWatch Alarm + SNS — WORKING (10-Jun-2026)
+
+Alarm fired successfully. Email received.
+
+What happened:
+
+- Machine-01 temperature spike to 88.31°C detected
+- CloudWatch alarm state changed: INSUFFICIENT_DATA -> ALARM
+- SNS email delivered to karthikjohnbabu@gmail.com within 60 seconds
+- Alarm description: "Alert when Machine-01 temperature exceeds 85 degrees"
+
+Key learnings:
+
+- Custom CloudWatch metric published by Lambda using put_metric_data()
+- Namespace IoT/SensorPipeline — completely custom, I defined it
+- Alarm evaluates Maximum temperature in each 1-minute window
+- SNS fan-out: one topic can notify email + SMS + Slack + Lambda simultaneously
+- State machine: INSUFFICIENT_DATA -> OK -> ALARM -> OK
+
+DEA-C01 Skill 3.3.7: CloudWatch logging and alerting — DONE with real alarm
